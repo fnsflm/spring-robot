@@ -1,0 +1,33 @@
+server:
+  port: 8081
+
+spring:
+  cq:
+    # 在这里配置各个功能执行顺序
+    # 如果前一个功能返回MESSAGE_BLOCK，下一个功能不会被执行
+    # 如果前一个功能返回MESSAGE_IGNORE，会继续执行下一个功能
+    plugin-list:
+      - com.example.demo.plugin.Savebot
+      - com.example.demo.plugin.HelpPlugin
+      - com.example.demo.plugin.BlackListPlugin
+      - com.example.demo.plugin.HelloPlugin
+      - com.example.demo.plugin.ErrCorrectPlugin
+      - com.example.demo.plugin.RepeatPlugin
+      - com.example.demo.plugin.XMSLPlugin
+      - com.example.demo.plugin.BlhxPlugin
+      - com.example.demo.plugin.BiliPlugin
+      - com.example.demo.plugin.RPPlugin
+      - com.example.demo.plugin.FlirtPlugin
+      - com.example.demo.plugin.PuoHaiPlugin
+      - com.example.demo.setu.SetuPlugin
+      - com.example.demo.plugin.OtherPlugin
+      - com.example.demo.plugin.DefinePlugin
+
+    # 下面配置event线程池，也可以删掉用默认的
+    event:
+      core-pool-size: 5
+      max-pool-size: 20
+      keep-alive-time: 2000
+      work-queue-size: 512
+
+    # 还有一些其他配置可以自己探索
