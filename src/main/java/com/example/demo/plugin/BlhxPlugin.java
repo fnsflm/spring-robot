@@ -70,13 +70,13 @@ public class BlhxPlugin extends CQPlugin {
             }
             return MESSAGE_BLOCK;
         }
-        if (msg.matches("指挥[喵猫]一图榜")) {
-            cq.sendGroupMsg(groupId, "金猫一图榜：https://i.loli.net/2020/07/27/vWb5d4Opj7Mfmxq.png\n" +
-                    "紫猫一图榜：https://i.loli.net/2020/07/27/cfw2qb4TSXyLnuF.png\n" +
-                    "天赋一图榜：https://i.loli.net/2020/07/27/NTcJG5BvyELSnA6.png", false);
-            cq.sendGroupMsg(groupId,CQCode.image("https://i.loli.net/2020/07/27/vWb5d4Opj7Mfmxq.png"),false);
-            cq.sendGroupMsg(groupId,CQCode.image("https://i.loli.net/2020/07/27/cfw2qb4TSXyLnuF.png"),false);
-            cq.sendGroupMsg(groupId,CQCode.image("https://i.loli.net/2020/07/27/NTcJG5BvyELSnA6.png"),false);
+        if (msg.matches("指挥[喵猫]一图榜")||msg.matches("[喵猫]榜")) {
+            cq.sendGroupMsg(groupId, "紫猫一图榜：https://gitee.com/fnsflm/myPicbed/raw/master/20201229113233.png\n" +
+                    "金猫一图榜：https://gitee.com/fnsflm/myPicbed/raw/master/20201229113515.png\n" +
+                    "天赋一图榜：https://gitee.com/fnsflm/myPicbed/raw/master/20201229113632.png", false);
+            cq.sendGroupMsg(groupId,CQCode.image("https://gitee.com/fnsflm/myPicbed/raw/master/20201229113233.png"),false);
+            cq.sendGroupMsg(groupId,CQCode.image("https://gitee.com/fnsflm/myPicbed/raw/master/20201229113515.png"),false);
+            cq.sendGroupMsg(groupId,CQCode.image("https://gitee.com/fnsflm/myPicbed/raw/master/20201229113632.png"),false);
         }
         if (msg.matches("^方舟wiki.*") || msg.matches("^mrfzwiki.*") || msg.matches("^fzwk.*")) {
             int spaceIndex = msg.indexOf(" ");

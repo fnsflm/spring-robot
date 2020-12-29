@@ -67,9 +67,15 @@ public class OtherPlugin extends CQPlugin {
         long userId = event.getUserId();
 
 
-        if (msg.equals("壁纸")) {
+        if (msg.matches("壁纸\\d*")) {
+            int count = 1;
+            if(msg.length()>2){
+                count = Integer.parseInt(msg.substring(2));
+            }
+            for(int i = 0; i < count && i < 20; i++){
 //            cq.sendGroupMsg(groupId, "https://api.ixiaowai.cn/api/api.php", false);
-            cq.sendGroupMsg(groupId,CQCode.image("https://api.ixiaowai.cn/api/api.php"),false);
+                cq.sendGroupMsg(groupId,CQCode.image("https://api.ixiaowai.cn/api/api.php"),false);
+            }
             return MESSAGE_BLOCK;
         }
         if (msg.contains("cal")) {
