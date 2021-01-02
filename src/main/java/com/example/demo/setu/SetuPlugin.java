@@ -26,19 +26,24 @@ public class SetuPlugin extends CQPlugin {
         String msg = event.getMessage();
         long userId = event.getUserId();
         long groupId = event.getGroupId();
-        String keyword="";
+
+        String keyword = "";
         int count = 1;
         if (msg.matches("[色涩]图\\d*( .*)?")) {
-            String[] msgs =  msg.split(" ");
-            if(msgs.length>1){
-                keyword=msgs[1];
+            String[] msgs = msg.split(" ");
+            if (msgs.length > 1) {
+                keyword = msgs[1];
             }
-            if(msgs[0].length()>2){
+            if (msgs[0].length() > 2) {
                 count = Integer.parseInt(msgs[0].substring(2));
             }
         } else if (msg.matches(".*[涩色]图.*") || msg.matches(".*不够[色涩].*")) {
             keyword = "";
         } else {
+            return MESSAGE_IGNORE;
+        }
+        if(groupId==490943205L){
+            cq.sendGroupMsg(groupId,"色图禁止nanodesu!(请移步开车群766625087)",false);
             return MESSAGE_IGNORE;
         }
         try {
@@ -49,19 +54,18 @@ public class SetuPlugin extends CQPlugin {
             cq.sendGroupMsg(groupId, "请求失败", false);
         }
         try {
-            sendSetu(groupId,cq,count);
+            if (setuRequest.getCount()==0) {
+                cq.sendGroupMsg(groupId, setuRequest.getMsg(), false);
+            } else
+                sendSetu(groupId, cq, count);
         } catch (Exception e) {
             e.printStackTrace();
             CQGlobal.robots.get(1132492036L).sendGroupMsg(654839559L, e.toString(), false);
-            if (setuRequest.getCode() == 404) {
-                cq.sendGroupMsg(groupId, setuRequest.getMsg(), false);
-            } else {
-                cq.sendGroupMsg(groupId, "图片发送失败", false);
-            }
+            cq.sendGroupMsg(groupId, "图片发送失败", false);
         }
-        try{
+        try {
             insertSetu();
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             CQGlobal.robots.get(1132492036L).sendGroupMsg(654839559L, e.toString(), false);
         }
@@ -86,21 +90,23 @@ public class SetuPlugin extends CQPlugin {
 //        }
     }
 
-    void sendSetu(Long groupId,CoolQ cq,int count){
+    void sendSetu(Long groupId, CoolQ cq, int count) {
 //        for(Setu setu:setuRequest.getData()){
 //            cq.sendGroupMsg(groupId,"标题：" + setu.getTitle() + "\n作者：" + setu.getAuthor() + "\n链接：" + setu.getUrl() + "\n剩余次数：" + setuRequest.getQuota()+"\ntags: "+setu.getTags(),false);
 //            cq.sendGroupMsg(groupId,CQCode.image(setu.getUrl()),false);
 //        }
         List<Setu> setus = setuRequest.getData();
-        for(int i = 0; i < count && i < setuRequest.getCount(); i++){
-            cq.sendGroupMsg(groupId,"标题：" + setus.get(i).getTitle() + "\npid: "+setus.get(i).getPid()+ "\n作者：" + setus.get(i).getAuthor() + "\n链接：" + setus.get(i).getUrl() + "\n剩余次数：" + setuRequest.getQuota()+"\ntags: "+setus.get(i).getTags(),false);
-            cq.sendGroupMsg(groupId,CQCode.image(setus.get(i).getUrl()),false);
+        int cnt = Math.min(count, setuRequest.getCount());
+        for (int i = 0; i < cnt; i++) {
+            cq.sendGroupMsg(groupId, "标题：" + setus.get(i).getTitle() + "\npid: " + setus.get(i).getPid() + "\n作者：" + setus.get(i).getAuthor() + "\n链接：" + setus.get(i).getUrl() + "\ncount: " + (i+1) + "/" + cnt + "\n剩余次数：" + setuRequest.getQuota() + "\ntags: " + setus.get(i).getTags(), false);
+            cq.sendGroupMsg(groupId, CQCode.image(setus.get(i).getUrl()), false);
 //            CQGlobal.robots.get(1132492036L).sendGroupMsg(654839559L, setus.get(i).getJson(), false);
         }
     }
-    void insertSetu(){
-        for(Setu setu:setuRequest.getData()){
-            SQLPlugin.insert("setu",setu.getPid()+"", setu.getUrl(),setu.getJson());
+
+    void insertSetu() {
+        for (Setu setu : setuRequest.getData()) {
+            SQLPlugin.insert("setu", setu.getPid() + "", setu.getUrl(), setu.getJson());
         }
     }
 

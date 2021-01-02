@@ -16,15 +16,15 @@ public class SchedulePlugin extends CQPlugin{
 
     @Scheduled(cron = "0 50 11,17,23 * * ? ",zone = "Asia/Shanghai")
     public void task1(){
-        CQGlobal.robots.get(1132492036L).sendGroupMsg(1067471239L,"演习次数要增加了nanodesu,大家快去乱杀吧",false);
+        CQGlobal.robots.get(1132492036L).sendGroupMsg(490943205L,"演习次数要增加了nanodesu,大家快去乱杀吧",false);
     }
     @Scheduled(cron = "0 0 21 * * ? ",zone = "Asia/Shanghai")
     public void task2(){
-        CQGlobal.robots.get(1132492036L).sendGroupMsg(1067471239L,"夜间委托开始了nanodesu",false);
+        CQGlobal.robots.get(1132492036L).sendGroupMsg(490943205L,"夜间委托开始了nanodesu",false);
     }
     @Scheduled(cron = "0 0 23 * * ? ",zone = "Asia/Shanghai")
     public void task3(){
-        CQGlobal.robots.get(1132492036L).sendGroupMsg(1067471239L,"每日任务、困难别忘了nanodesu",false);
+        CQGlobal.robots.get(1132492036L).sendGroupMsg(490943205L,"每日任务、困难别忘了nanodesu",false);
     }
     @Scheduled(cron = "0 0 0 * * ? ",zone = "Asia/Shanghai")
     public void clearRP(){SQLPlugin.delete("lucky");}
