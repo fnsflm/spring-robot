@@ -7,11 +7,14 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class FlirtPlugin extends CQPlugin {
+    /*
+    * 调戏功能
+    * */
     @Override
     public int onGroupMessage(CoolQ cq, CQGroupMessageEvent event) {
         String msg = event.getMessage();
         long groupId = event.getGroupId();
-        long userId = event.getUserId();
+//        long userId = event.getUserId();
         if(msg.equals("掀裙子")) {
             cq.sendGroupMsg(groupId, "啊呜啊呜，好害羞的nanodesu", false);
             return MESSAGE_BLOCK;

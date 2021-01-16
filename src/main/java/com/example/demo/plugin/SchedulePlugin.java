@@ -1,7 +1,6 @@
 package com.example.demo.plugin;
 
 import com.example.demo.SQLplugin.SQLPlugin;
-import com.example.demo.setu.SetuPlugin;
 import net.lz1998.cq.CQGlobal;
 import net.lz1998.cq.robot.CQPlugin;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -128,16 +127,5 @@ public class SchedulePlugin extends CQPlugin{
 //            e.printStackTrace();
 //        }
 //    }
-//    @Scheduled(cron = "0 0,30 * * * ? ",zone = "Asia/Shanghai")
-//    public void cycleSetu(){
-//        try{
-////            String[] setu = SetuPlugin.getloliapp("");
-////            CQGlobal.robots.get(1132492036L).sendGroupMsg(1067471239L, "定时setu\n标题：" + setu[0] + "\n作者：" + setu[1] + "\n链接：" + setu[2] + "\n剩余次数：" + setu[3], false);
-////            (new SetuPlugin.MyThread(1067471239L,CQGlobal.robots.get(1132492036L),setu)).start();
-//        }catch(Exception e){
-//            e.printStackTrace();
-//            CQGlobal.robots.get(1132492036L).sendGroupMsg(654839559L, e.toString(), false);
-//        }
-//
-//    }
+
 }

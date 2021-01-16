@@ -1,0 +1,225 @@
+[92m2021-01-17 02:01:14 I/Bot 1132492036: Logging in...
+[92m2021-01-17 02:01:14 I/Net 1132492036: Connected to server 42.81.172.22:80
+[0m2021-01-17 02:01:14 V/Net 1132492036: Send: wtlogin.login
+[0m2021-01-17 02:01:15 V/Net 1132492036: Recv: WtLogin.Login.LoginPacketResponse.DeviceLockLogin
+[0m2021-01-17 02:01:15 V/Net 1132492036: Send: wtlogin.login
+[0m2021-01-17 02:01:15 V/Net 1132492036: Recv: LoginPacketResponse.Success
+[92m2021-01-17 02:01:15 I/Net 1132492036: Login successful
+[0m2021-01-17 02:01:15 V/Net 1132492036: Send: StatSvc.register
+[0m2021-01-17 02:01:15 V/Net 1132492036: Recv: Response(StatSvc.register)
+[92m2021-01-17 02:01:15 I/Net 1132492036: 开始加载好友信息
+[92m2021-01-17 02:01:15 I/Net 1132492036: 开始加载群组列表与群成员列表
+[0m2021-01-17 02:01:15 V/Net 1132492036: Send: friendlist.GetTroopListReqV2
+[0m2021-01-17 02:01:15 V/Net 1132492036: Send: friendlist.getFriendGroupList
+[0m2021-01-17 02:01:15 V/Net 1132492036: Recv: FriendList.GetFriendGroupList.Response
+[0m2021-01-17 02:01:15 V/Net 1132492036: Send: OidbSvc.0x88d_7
+[0m2021-01-17 02:01:15 V/Net 1132492036: Recv: FriendList.GetFriendGroupList.Response
+[0m2021-01-17 02:01:15 V/Net 1132492036: Send: OidbSvc.0x88d_7
+[0m2021-01-17 02:01:15 V/Net 1132492036: Send: OidbSvc.0x88d_7
+[0m2021-01-17 02:01:15 V/Net 1132492036: 正在加载好友列表 6/6
+[92m2021-01-17 02:01:15 I/Net 1132492036: 好友列表加载完成, 共 6个
+[0m2021-01-17 02:01:15 V/Net 1132492036: Send: friendlist.GetTroopMemberListReq
+[0m2021-01-17 02:01:15 V/Net 1132492036: Send: friendlist.GetTroopMemberListReq
+[0m2021-01-17 02:01:15 V/Net 1132492036: Send: friendlist.GetTroopMemberListReq
+[0m2021-01-17 02:01:15 V/Net 1132492036: Recv: FriendList.GetTroopMemberList.Response
+[0m2021-01-17 02:01:15 V/Net 1132492036: Recv: FriendList.GetTroopMemberList.Response
+[0m2021-01-17 02:01:15 V/Net 1132492036: Recv: FriendList.GetTroopMemberList.Response
+[92m2021-01-17 02:01:15 I/Net 1132492036: 群组列表与群成员加载完成, 共 3个
+[92m2021-01-17 02:01:15 I/Net 1132492036: Awaiting ConfigPushSvc.PushReq
+[92m2021-01-17 02:01:15 I/Net 1132492036: Syncing friend message history...
+[0m2021-01-17 02:01:15 V/Net 1132492036: Send: MessageSvc.PbGetMsg
+[0m2021-01-17 02:01:16 V/Net 1132492036: Send: MessageSvc.PbDeleteMsg
+[92m2021-01-17 02:01:16 I/Net 1132492036: Syncing friend message history: Success
+[92m2021-01-17 02:01:16 I/Bot 1132492036: Login successful
+Exception in thread "main" java.io.IOException: 错误的文件描述符
+	at java.io.FileInputStream.readBytes(Native Method)
+	at java.io.FileInputStream.read(FileInputStream.java:255)
+	at java.io.BufferedInputStream.fill(BufferedInputStream.java:246)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:265)
+	at kotlin.io.ConsoleKt.readLine(Console.kt:162)
+	at kotlin.io.ConsoleKt.readLine(Console.kt:153)
+	at net.lz1998.HelloKt.main(Hello.kt:16)
+	at net.lz1998.HelloKt$main$1.invokeSuspend(Hello.kt)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.internal.ScopeCoroutine.afterResume(Scopes.kt:32)
+	at kotlinx.coroutines.AbstractCoroutine.resumeWith(AbstractCoroutine.kt:113)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:46)
+	at kotlinx.coroutines.DispatchedContinuationKt.resumeCancellableWith(DispatchedContinuation.kt:250)
+	at kotlinx.coroutines.internal.ScopeCoroutine.afterCompletion(Scopes.kt:27)
+	at kotlinx.coroutines.JobSupport.continueCompleting(JobSupport.kt:933)
+	at kotlinx.coroutines.JobSupport.access$continueCompleting(JobSupport.kt:28)
+	at kotlinx.coroutines.JobSupport$ChildCompletion.invoke(JobSupport.kt:1152)
+	at kotlinx.coroutines.JobSupport.notifyCompletion(JobSupport.kt:1529)
+	at kotlinx.coroutines.JobSupport.completeStateFinalization(JobSupport.kt:323)
+	at kotlinx.coroutines.JobSupport.finalizeFinishingState(JobSupport.kt:240)
+	at kotlinx.coroutines.JobSupport.tryMakeCompletingSlowPath(JobSupport.kt:903)
+	at kotlinx.coroutines.JobSupport.tryMakeCompleting(JobSupport.kt:860)
+	at kotlinx.coroutines.JobSupport.makeCompletingOnce$kotlinx_coroutines_core(JobSupport.kt:825)
+	at kotlinx.coroutines.AbstractCoroutine.resumeWith(AbstractCoroutine.kt:111)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:46)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:56)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:571)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:738)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:678)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:665)
+websocket失败Failed to connect to /127.0.0.1:8081
+java.net.ConnectException: Failed to connect to /127.0.0.1:8081
+	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.kt:297)
+	at okhttp3.internal.connection.RealConnection.connect(RealConnection.kt:207)
+	at okhttp3.internal.connection.ExchangeFinder.findConnection(ExchangeFinder.kt:226)
+	at okhttp3.internal.connection.ExchangeFinder.findHealthyConnection(ExchangeFinder.kt:106)
+	at okhttp3.internal.connection.ExchangeFinder.find(ExchangeFinder.kt:74)
+	at okhttp3.internal.connection.RealCall.initExchange$okhttp(RealCall.kt:255)
+	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.kt:32)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.kt:95)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.kt:83)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.kt:76)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.connection.RealCall.getResponseWithInterceptorChain$okhttp(RealCall.kt:201)
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:517)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: 拒绝连接 (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at okhttp3.internal.platform.Platform.connectSocket(Platform.kt:120)
+	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.kt:295)
+	... 18 more
+ws try connect
+websocket失败Failed to connect to /127.0.0.1:8081
+java.net.ConnectException: Failed to connect to /127.0.0.1:8081
+	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.kt:297)
+	at okhttp3.internal.connection.RealConnection.connect(RealConnection.kt:207)
+	at okhttp3.internal.connection.ExchangeFinder.findConnection(ExchangeFinder.kt:226)
+	at okhttp3.internal.connection.ExchangeFinder.findHealthyConnection(ExchangeFinder.kt:106)
+	at okhttp3.internal.connection.ExchangeFinder.find(ExchangeFinder.kt:74)
+	at okhttp3.internal.connection.RealCall.initExchange$okhttp(RealCall.kt:255)
+	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.kt:32)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.kt:95)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.kt:83)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.kt:76)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.connection.RealCall.getResponseWithInterceptorChain$okhttp(RealCall.kt:201)
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:517)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: 拒绝连接 (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at okhttp3.internal.platform.Platform.connectSocket(Platform.kt:120)
+	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.kt:295)
+	... 18 more
+wait ws reconnect interval
+[0m2021-01-17 02:01:18 V/Net 1132492036: Recv: ConfigPushSvc.PushReq.PushReqResponse.Success
+[0m2021-01-17 02:01:18 V/Net 1132492036: Send: ConfigPushSvc.PushResp
+[92m2021-01-17 02:01:18 I/Net 1132492036: ConfigPushSvc.PushReq: Success
+[96m2021-01-17 02:01:18 D/Net 1132492036: Received unknown commandName: ConfigPushSvc.PushDomain
+[0m2021-01-17 02:01:18 V/Net 1132492036: Recv: ConfigPushSvc.PushReq.PushReqResponse.Success
+[0m2021-01-17 02:01:18 V/Net 1132492036: Send: ConfigPushSvc.PushResp
+[0m2021-01-17 02:01:46 V/Bot 1132492036: [机器人测试群0(654839559)] fnsflm(1501670812) -> [mirai:source:2971,580396570]羽入
+{"type":"GroupMessage","self_id":1132492036,"sub_type":"normal","message_id":2971,"group_id":654839559,"user_id":1501670812,"anonymous":null,"message":[{"type":"text","data":{"text":"羽入"}}],"raw_message":"羽入","font":0,"sender":{"user_id":1501670812,"nickname":"fnsflm","card":"fnsflm","sex":"unknown","age":0,"area":"unknown","level":"unknown","role":"owner","title":"unknown"},"time":1610820106474,"post_type":"message","message_type":"group"}
+ws try connect
+websocket 已连接
+[0m2021-01-17 02:01:57 V/Bot 1132492036: [机器人测试群0(654839559)] fnsflm(1501670812) -> [mirai:source:2972,1984742403]色图
+{"type":"GroupMessage","self_id":1132492036,"sub_type":"normal","message_id":2972,"group_id":654839559,"user_id":1501670812,"anonymous":null,"message":[{"type":"text","data":{"text":"色图"}}],"raw_message":"色图","font":0,"sender":{"user_id":1501670812,"nickname":"fnsflm","card":"fnsflm","sex":"unknown","age":0,"area":"unknown","level":"unknown","role":"owner","title":"unknown"},"time":1610820117925,"post_type":"message","message_type":"group"}
+call api
+call api
+[0m2021-01-17 02:01:59 V/Net 1132492036: Send: MessageSvc.PbSendMsg
+[0m2021-01-17 02:01:59 V/Net 1132492036: Recv: MessageSvcPbSendMsg.Response.SUCCESS
+[0m2021-01-17 02:01:59 V/Bot 1132492036: Group(654839559) <- 标题：幼なじみな妹美夕はお兄ちゃんがだぁいすき♡\npid: 64238332\n作者：kyou\n链接：https://i.pixiv.cat/img-master/img/2017/08/05/18/59/36/64238332_p0_master1200.jpg\ncount: 1/1\n剩余次数：274\ntags: [オリジナル, 原创, 音声作品, audio work, 妹, 妹妹, Uの字口, U字嘴, 仰臥, 仰卧]
+call api
+[0m2021-01-17 02:02:00 V/Net 1132492036: Send: MessageSvc.PbSendMsg
+[0m2021-01-17 02:02:00 V/Net 1132492036: Recv: MessageSvcPbSendMsg.Response.SUCCESS
+[0m2021-01-17 02:02:00 V/Bot 1132492036: Group(654839559) <- [image]
+[0m2021-01-17 02:02:09 V/Bot 1132492036: [机器人测试群0(654839559)] fnsflm(1501670812) -> [mirai:source:2975,701000398]色图
+{"type":"GroupMessage","self_id":1132492036,"sub_type":"normal","message_id":2975,"group_id":654839559,"user_id":1501670812,"anonymous":null,"message":[{"type":"text","data":{"text":"色图"}}],"raw_message":"色图","font":0,"sender":{"user_id":1501670812,"nickname":"fnsflm","card":"fnsflm","sex":"unknown","age":0,"area":"unknown","level":"unknown","role":"owner","title":"unknown"},"time":1610820129353,"post_type":"message","message_type":"group"}
+call api
+[0m2021-01-17 02:02:09 V/Net 1132492036: Send: MessageSvc.PbSendMsg
+[0m2021-01-17 02:02:09 V/Net 1132492036: Recv: MessageSvcPbSendMsg.Response.SUCCESS
+[0m2021-01-17 02:02:09 V/Bot 1132492036: Group(654839559) <- 色图
+call api
+call api
+[0m2021-01-17 02:02:10 V/Net 1132492036: Send: MessageSvc.PbSendMsg
+[0m2021-01-17 02:02:10 V/Net 1132492036: Recv: MessageSvcPbSendMsg.Response.SUCCESS
+[0m2021-01-17 02:02:10 V/Bot 1132492036: Group(654839559) <- 标题：いづなたん\npid: 55726833\n作者：goribote\n链接：https://i.pixiv.cat/img-master/img/2016/03/10/09/02/08/55726833_p0_master1200.jpg\ncount: 1/1\n剩余次数：273\ntags: [ノーゲーム・ノーライフ, NO GAME NO LIFE 游戏人生, 初瀬いづな, 初濑伊纲, なにこれかわいい, 卧槽好可爱, 狐耳, fox ears, 尻尾, 尾巴]
+call api
+[0m2021-01-17 02:02:11 V/Net 1132492036: Send: MessageSvc.PbSendMsg
+[0m2021-01-17 02:02:11 V/Net 1132492036: Recv: MessageSvcPbSendMsg.Response.SUCCESS
+[0m2021-01-17 02:02:11 V/Bot 1132492036: Group(654839559) <- [image]
+[0m2021-01-17 02:02:15 V/Net 1132492036: Send: Heartbeat.Alive
+[0m2021-01-17 02:02:15 V/Net 1132492036: Recv: Heartbeat.Alive.Response
+[0m2021-01-17 02:03:15 V/Net 1132492036: Send: Heartbeat.Alive
+[0m2021-01-17 02:03:15 V/Net 1132492036: Recv: Heartbeat.Alive.Response
+[0m2021-01-17 02:03:42 V/Bot 1132492036: [机器人测试群0(654839559)] fnsflm(1501670812) -> [mirai:source:2979,1191152406]色图
+{"type":"GroupMessage","self_id":1132492036,"sub_type":"normal","message_id":2979,"group_id":654839559,"user_id":1501670812,"anonymous":null,"message":[{"type":"text","data":{"text":"色图"}}],"raw_message":"色图","font":0,"sender":{"user_id":1501670812,"nickname":"fnsflm","card":"fnsflm","sex":"unknown","age":0,"area":"unknown","level":"unknown","role":"owner","title":"unknown"},"time":1610820222012,"post_type":"message","message_type":"group"}
+call api
+call api
+[0m2021-01-17 02:03:42 V/Net 1132492036: Send: MessageSvc.PbSendMsg
+[0m2021-01-17 02:03:42 V/Net 1132492036: Recv: MessageSvcPbSendMsg.Response.SUCCESS
+[0m2021-01-17 02:03:42 V/Bot 1132492036: Group(654839559) <- 标题：留守番わんこ\npid: 60367141\n作者：しばいぬにき\n链接：https://i.pixiv.cat/img-master/img/2016/12/14/00/10/09/60367141_p0_master1200.jpg\ncount: 1/1\n剩余次数：272\ntags: [オリジナル, 原创, 犬耳, dog ears, ツインテール, 双马尾, ニーソ, 过膝袜, パンツ, 内裤, オフショルダー, 露肩, 横臥, 侧卧, 女の子, 女孩子, ぱんつ, 胖次]
+call api
+[0m2021-01-17 02:03:43 V/Net 1132492036: Send: MessageSvc.PbSendMsg
+[0m2021-01-17 02:03:43 V/Net 1132492036: Recv: MessageSvcPbSendMsg.Response.SUCCESS
+[0m2021-01-17 02:03:43 V/Bot 1132492036: Group(654839559) <- [image]
+[0m2021-01-17 02:04:15 V/Net 1132492036: Send: Heartbeat.Alive
+[0m2021-01-17 02:04:15 V/Net 1132492036: Recv: Heartbeat.Alive.Response
+websocket正在关闭 The web application is stopping
+websocket失败sent ping but didn't receive pong within 3000ms (after 59 successful ping/pongs)
+java.net.SocketTimeoutException: sent ping but didn't receive pong within 3000ms (after 59 successful ping/pongs)
+	at okhttp3.internal.ws.RealWebSocket.writePingFrame$okhttp(RealWebSocket.kt:563)
+	at okhttp3.internal.ws.RealWebSocket$initReaderAndWriter$$inlined$synchronized$lambda$1.runOnce(TaskQueue.kt:219)
+	at okhttp3.internal.concurrent.TaskRunner.runTask(TaskRunner.kt:116)
+	at okhttp3.internal.concurrent.TaskRunner.access$runTask(TaskRunner.kt:42)
+	at okhttp3.internal.concurrent.TaskRunner$runnable$1.run(TaskRunner.kt:65)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+ws try connect
+websocket失败Failed to connect to /127.0.0.1:8081
+java.net.ConnectException: Failed to connect to /127.0.0.1:8081
+	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.kt:297)
+	at okhttp3.internal.connection.RealConnection.connect(RealConnection.kt:207)
+	at okhttp3.internal.connection.ExchangeFinder.findConnection(ExchangeFinder.kt:226)
+	at okhttp3.internal.connection.ExchangeFinder.findHealthyConnection(ExchangeFinder.kt:106)
+	at okhttp3.internal.connection.ExchangeFinder.find(ExchangeFinder.kt:74)
+	at okhttp3.internal.connection.RealCall.initExchange$okhttp(RealCall.kt:255)
+	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.kt:32)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.kt:95)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.kt:83)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.kt:76)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.connection.RealCall.getResponseWithInterceptorChain$okhttp(RealCall.kt:201)
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:517)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: 拒绝连接 (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at okhttp3.internal.platform.Platform.connectSocket(Platform.kt:120)
+	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.kt:295)
+	... 18 more
+wait ws reconnect interval
