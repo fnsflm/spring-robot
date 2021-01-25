@@ -27,7 +27,7 @@ spring:
     event:
       core-pool-size: 5
       max-pool-size: 20
-      keep-alive-time: 2000
+      keep-alive-time: 20000
       work-queue-size: 512
 
     # 还有一些其他配置可以自己探索

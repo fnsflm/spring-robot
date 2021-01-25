@@ -8,7 +8,7 @@ public class SQLPlugin {
         String driverName = "com.mysql.jdbc.Driver";
         String url = "jdbc:mysql://localhost:3306/blhxbot?useUnicode=true&characterEncoding=utf-8";
         String username = "blhxbot";
-        String password = "721217";
+        String password = "1234";
         try{
             conn = DriverManager.getConnection(url, username, password);
         }catch (SQLException e){

@@ -29,6 +29,8 @@ public class SetuPlugin extends CQPlugin {
 
         String keyword = "";
         int count = 1;
+        if (msg.contains("栞栞"))
+            return MESSAGE_IGNORE;
         if (msg.matches("[色涩]图\\d*( .*)?")) {
             String[] msgs = msg.split(" ");
             if (msgs.length > 1) {
@@ -43,8 +45,8 @@ public class SetuPlugin extends CQPlugin {
             return MESSAGE_IGNORE;
         }
         // 个别群禁止色图功能
-        if(groupId==490943205L){
-            cq.sendGroupMsg(groupId,"色图禁止nanodesu!(请移步开车群766625087)",false);
+        if (groupId == 490943205L) {
+            cq.sendGroupMsg(groupId, "色图禁止nanodesu!(请移步开车群766625087)", false);
             return MESSAGE_IGNORE;
         }
         // 获取json, 存到类变量setuRequest中
@@ -57,7 +59,7 @@ public class SetuPlugin extends CQPlugin {
         }
         // 发送setu
         try {
-            if (setuRequest.getCount()==0) {
+            if (setuRequest.getCount() == 0) {
                 cq.sendGroupMsg(groupId, setuRequest.getMsg(), false);
             } else
                 sendSetu(groupId, cq, count);
@@ -67,12 +69,12 @@ public class SetuPlugin extends CQPlugin {
             cq.sendGroupMsg(groupId, "图片发送失败", false);
         }
         // 插入setu到数据库
-        try {
-            insertSetu();
-        } catch (Exception e) {
-            e.printStackTrace();
-            CQGlobal.robots.get(1132492036L).sendGroupMsg(654839559L, e.toString(), false);
-        }
+//        try {
+//            insertSetu();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            CQGlobal.robots.get(1132492036L).sendGroupMsg(654839559L, e.toString(), false);
+//        }
         return MESSAGE_BLOCK;
     }
 
@@ -85,8 +87,10 @@ public class SetuPlugin extends CQPlugin {
         List<Setu> setus = setuRequest.getData();
         int cnt = Math.min(count, setuRequest.getCount());
         for (int i = 0; i < cnt; i++) {
-            cq.sendGroupMsg(groupId, "标题：" + setus.get(i).getTitle() + "\npid: " + setus.get(i).getPid() + "\n作者：" + setus.get(i).getAuthor() + "\n链接：" + setus.get(i).getUrl() + "\ncount: " + (i+1) + "/" + cnt + "\n剩余次数：" + setuRequest.getQuota() + "\ntags: " + setus.get(i).getTags(), false);
-            cq.sendGroupMsg(groupId, CQCode.image(setus.get(i).getUrl()), false);
+            cq.sendGroupMsg(groupId, "标题：" + setus.get(i).getTitle() + "\npid: " + setus.get(i).getPid() + "\n作者：" + setus.get(i).getAuthor() + "\n链接：" + setus.get(i).getUrl() + "\ncount: " + (i + 1) + "/" + cnt + "\n剩余次数：" + setuRequest.getQuota() + "\ntags: " + setus.get(i).getTags(), false);
+//            cq.sendGroupMsg(groupId, CQCode.image(setus.get(i).getUrl()), false);
+//            cq.sendGroupMsg(groupId, "[CQ:image,url=https://i.pixiv.cat/img-master/img/2018/01/07/02/11/54/66681542_p0_master1200.jpg]", false);
+//            System.out.println(CQCode.image(setus.get(i).getUrl()));
 //            CQGlobal.robots.get(1132492036L).sendGroupMsg(654839559L, setus.get(i).getJson(), false);
         }
     }
@@ -105,6 +109,7 @@ public class SetuPlugin extends CQPlugin {
             url = url + "&keyword=" + keyword;
         }
         URLConnection con = (new URL(url)).openConnection();
+        con.setRequestProperty("Charsert", "UTF-8");
         con.connect();
         InputStream in = con.getInputStream();
         InputStreamReader isr = new InputStreamReader(in);
