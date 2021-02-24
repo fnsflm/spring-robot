@@ -88,7 +88,7 @@ public class SetuPlugin extends CQPlugin {
         int cnt = Math.min(count, setuRequest.getCount());
         for (int i = 0; i < cnt; i++) {
             cq.sendGroupMsg(groupId, "标题：" + setus.get(i).getTitle() + "\npid: " + setus.get(i).getPid() + "\n作者：" + setus.get(i).getAuthor() + "\n链接：" + setus.get(i).getUrl() + "\ncount: " + (i + 1) + "/" + cnt + "\n剩余次数：" + setuRequest.getQuota() + "\ntags: " + setus.get(i).getTags(), false);
-//            cq.sendGroupMsg(groupId, CQCode.image(setus.get(i).getUrl()), false);
+            cq.sendGroupMsg(groupId, CQCode.image(setus.get(i).getUrl()), false);
 //            cq.sendGroupMsg(groupId, "[CQ:image,url=https://i.pixiv.cat/img-master/img/2018/01/07/02/11/54/66681542_p0_master1200.jpg]", false);
 //            System.out.println(CQCode.image(setus.get(i).getUrl()));
 //            CQGlobal.robots.get(1132492036L).sendGroupMsg(654839559L, setus.get(i).getJson(), false);

@@ -66,18 +66,17 @@ public class OtherPlugin extends CQPlugin {
         long groupId = event.getGroupId();
         long userId = event.getUserId();
 
-
-//        if (msg.matches("壁纸\\d*")) {
-//            int count = 1;
-//            if(msg.length()>2){
-//                count = Integer.parseInt(msg.substring(2));
-//            }
-//            for(int i = 0; i < count && i < 20; i++){
-////            cq.sendGroupMsg(groupId, "https://api.ixiaowai.cn/api/api.php", false);
-//                cq.sendGroupMsg(groupId,CQCode.image("https://api.ixiaowai.cn/api/api.php"),false);
-//            }
-//            return MESSAGE_BLOCK;
-//        }
+        if (msg.matches("壁纸\\d*")) {
+            int count = 1;
+            if (msg.length() > 2) {
+                count = Integer.parseInt(msg.substring(2));
+            }
+            for (int i = 0; i < count && i < 20; i++) {
+//            cq.sendGroupMsg(groupId, "https://api.ixiaowai.cn/api/api.php", false);
+                cq.sendGroupMsg(groupId, CQCode.image("https://api.ixiaowai.cn/api/api.php"), false);
+            }
+            return MESSAGE_BLOCK;
+        }
         if (msg.contains("cal")) {
             String s = msg.substring(msg.indexOf(" ") + 1);
             ScriptEngineManager manager = new ScriptEngineManager();
@@ -96,7 +95,7 @@ public class OtherPlugin extends CQPlugin {
             flag = try_to_visit(s);
             if (flag) {
                 cq.sendGroupMsg(groupId, "https://pixiv.cat/" + ss[1] + ".jpg", false);
-                cq.sendGroupMsg(groupId,CQCode.image("https://pixiv.cat/"+ss[1]+".jpg"),false);
+                cq.sendGroupMsg(groupId, CQCode.image("https://pixiv.cat/" + ss[1] + ".jpg"), false);
                 return MESSAGE_BLOCK;
             }
             s = "https://pixiv.cat/" + ss[1] + "-1.jpg";
